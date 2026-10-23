@@ -1,34 +1,25 @@
-# Arbeitsregeln für alle Agenten
+# Agentenanweisungen — LEGO-Minifiguren-Website
 
-## Vor jeder Aufgabe
+**Aktiver Produktumfang:** [CURRENT_SCOPE](docs/product/CURRENT_SCOPE.md). Diese Datei und der tatsächliche Code sind maßgeblich. Frühere Mehrsammlungs-, React-, PWA-, Analyse- und News-Pläne sind **nicht** der Entwicklungsauftrag. Bei Widersprüchen gilt die jüngste ausdrückliche Nutzeranweisung vor diesem Scope.
 
-Lies `docs/product/CURRENT_SCOPE.md`, `docs/planning/STATUS.md` und die für die Aufgabe passenden Dokumente. Prüfe vorhandenen Code, Repository-Anweisungen und den Arbeitsbaum. Dieses Paket beschreibt ein Zielbild, keinen Beweis implementierter Funktionen. Verändere keine fremden Änderungen und überschreibe bestehende README-/Konfigurationsdateien nicht blind.
+## Vor dem Bearbeiten
+1. Lies `docs/product/CURRENT_SCOPE.md`, `docs/planning/STATUS.md` und `docs/development/PROTOTYPE.md`.
+2. Prüfe den realen Code und die Tests. Behalte die vorhandene **HTML/CSS/JavaScript**-Website; keine ungefragte Framework-Migration.
+3. Lies nur die für den konkreten Task nötigen weiteren Dokumente. Die historischen Pläne unter `docs/architecture/`, `docs/ui/`, die ursprüngliche Projektkontextdatei und der Bootstrap-Prompt sind **Archiv/Entwürfe**, keine Implementierungsvorgaben.
 
-Priorität: neueste ausdrückliche Nutzeranweisung > CURRENT_SCOPE > ursprünglicher Produktkontext > Architektur/Verträge > UI-Spezifikation > menschliche Übersichten. Dokumentiere Widersprüche; passe die nachrangigen Dokumente an. Arbeitsannahmen aus DECISIONS sind für den Feldversuch verwendbar, aber keine bestätigten Produktentscheidungen.
+## Technische Leitlinien
+- Eine feste LEGO-Minifiguren-Sammlung, ein Nutzer, klassische Website.
+- Bestehende Trennung beibehalten: `src/domain` (Regeln), `src/application` (Anwendungsfälle), `src/infrastructure` (lokaler Speicher), `src/presentation` (Ansichten), `src/app.js` (Verdrahtung).
+- Daten bleiben zunächst **lokal im Browser**. Keine Drittanbieter für Speicherung, kein Cloud-Account, kein Backend allein aus Vorsicht.
+- Externe Datenquellen **dürfen später nur für Figurenerkennung und Preisrecherche** erwogen werden. Kein Anbieter wurde festgelegt. Preise als nachvollziehbare Schätzungen darstellen; Inseratspreis ist kein nachgewiesener Verkaufspreis.
+- Keine unnötigen Kategorie-, Mehrsammlungs-, Attributschema-, Dashboard-, News-, Analyse-, PWA- oder Sync-Abstraktionen.
+- Bestehenden Bestand schützen: keine ungefragten `localStorage`-Resets, Schemaänderungen ohne Migration, Massenlöschung oder heimliche Datenübertragung.
+- Jede Änderung gezielt testen, tatsächliche Ergebnisse von Plänen unterscheiden und README/STATUS/FEATURE_CHECKLIST bei relevanten Änderungen nachführen.
 
-## Architekturgrenzen
+## Zielreihenfolge
+1. Aktuelle einfache LEGO-Website beurteilen und nur nötige UX-Probleme beheben.
+2. Foto einer Minifigur → **Erkennungsvorschläge** → manuelle Bestätigung/Korrektur → vorhandenes Eingabeformular befüllen.
+3. Geschätzter **aktueller Markt-/Handelspreis** mit erkennbarer Quelle, Datenstand, Zuverlässigkeit und manueller Korrekturmöglichkeit.
+4. Erst nach Nutzerbewertung über weitere Funktionen entscheiden.
 
-- `presentation`: React, Formulare, Ansichten, Formatierung, Hooks. Kein direkter Datenbankzugriff, keine Preisberechnung als duplizierte UI-Logik.
-- `application`: Anwendungsfälle und Ports. Keine React-, DOM-, Router- oder Dexie-Imports.
-- `domain`: reine Typen und fachliche Regeln. Keine Browser-, Speicher- oder UI-Abhängigkeiten.
-- `infrastructure`: Implementierungen der Ports, Browser- und Datenbankzugriffe.
-- `app`: verdrahtet diese Teile als einziger Composition Root.
-- Kein Ordner `backend` ohne tatsächlichen Server. Backend-artige Aufgaben gehören zunächst in application/domain/infrastructure.
-- Keine unnötigen Klassen, Basis-Repositories, globalen Event-Busse oder DI-Frameworks. TypeScript-Typen und Funktionen genügen.
-
-## Inhaltliche Grenzen
-
-Keine Pflichtnamen und keine Eindeutigkeit von Namen/Katalognummern. Jedes Exemplar hat eine eigene interne ID. Eigene Attribute bleiben String-Paare. Keine stillen API-Aufrufe, Telemetrie, Cloud-Dienste oder Veröffentlichung. Keine Geheimnisse im Client; auch `.env` macht Clientwerte nicht geheim. Keine automatische öffentliche Deployment-Pipeline.
-
-## Zusammenarbeit und Abschluss
-
-Lies für UI-Aufgaben zusätzlich UI_SPEC; für Datenaufgaben DATA_CONTRACTS; für Gerüstaufgaben REPOSITORY_MAP und den Bootstrap-Prompt. Bearbeite nur den beauftragten Umfang. Nutze vorhandene Muster, statt parallele Alternativen einzuführen. Bei späterer paralleler Arbeit vorab exklusive Dateizuständigkeiten vereinbaren; gemeinsam genutzte Verträge zuerst abstimmen.
-
-Jede Übergabe nennt: geänderte Dateien, tatsächliches Verhalten, ausgeführte Prüfungen mit Ergebnis, Einschränkungen und nächsten sinnvollen Task. Aktualisiere STATUS und betroffene Übersichten. Markiere Features nur nach Umsetzung und passender Prüfung als fertig. Nicht ausführbare Prüfungen heißen „nicht ausgeführt“, nicht „bestanden“.
-
-Die Dateien CLASS_DIAGRAM, PROJECT_FLOW, UI_PREVIEW und FEATURE_CHECKLIST sind für den Menschen; verbindliche technische Details liegen in docs/architecture und docs/ui. Falls später VISUAL_OVERVIEW_AGENT.md bereitgestellt wird, beachte deren zusätzliche Anweisung. Erfinde ihren Inhalt nicht.
-
-
-## Aktueller angeordneter Website-Prototyp
-
-Der Projektinhaber hat am 23.10.2026 ausdrücklich eine Vereinfachung auf HTML, CSS und JavaScript beauftragt: [PROTOTYPE_DIRECTIVE](docs/product/PROTOTYPE_DIRECTIVE.md). Aktive technische Übergabe: [PROTOTYPE.md](docs/development/PROTOTYPE.md). Presentation verwendet jetzt native DOM-/HTML-Ansichten statt React; die übrigen Schichtengrenzen bleiben sinnvoll bestehen. Kein React-/TS-/Vite-Gerüst, keine sechs Tabs und keine Sammlungs-/Attributkonfiguration ohne neuen Auftrag einführen. Die älteren Zielentwürfe bleiben Dokumentationshistorie. Repository-Commits sind autorisiert; ein öffentliches Website-Deployment ist nicht beauftragt.
+Keine der beiden automatischen Funktionen ist derzeit implementiert. Implementiere sie erst nach einem konkreten Auftrag einschließlich Datenquellen-/Kosten-/Datenschutzentscheidung.

@@ -1,62 +1,43 @@
-# sammel-webapp · einfache LEGO-Website
+# LEGO-Minifiguren-Sammlung
 
-Eine WebApp für den Privatgebrauch, welche am Ende eine digitale Übersicht über gesammelte Gegenstände sein soll.
+Eine einfache **Website zur Digitalisierung einer privaten LEGO-Minifiguren-Sammlung**. Keine universelle Sammlerplattform.
 
-Stand: 23.10.2026 · Angeordneter einfacher Website-Prototyp
-
-Die Website ist als einfacher **HTML-/CSS-/JavaScript-Prototyp** bedienbar. Der Projektinhaber hat diese Vereinfachung ausdrücklich angeordnet; [Auftrag und Abweichungen zur alten Planung](docs/product/PROTOTYPE_DIRECTIVE.md) sind dokumentiert.
+**Aktueller Stand:** Manuelles Inventar funktioniert; automatische Bildidentifizierung und aktuelle Preisrecherche sind als nächste Kernfunktionen geplant, nicht implementiert.
 
 ## Lokal starten
-
-Node **ab 22** installieren (geprüft mit **24.19.0**, siehe `.nvmrc`), Repository herunterladen/klonen und im Repository-Ordner ausführen:
+Voraussetzung: Node.js **ab 22**. Im Repository:
 
 ```sh
 npm start
 ```
 
-Dann **http://127.0.0.1:5173** öffnen. Für den Start müssen keine npm-Pakete installiert und keine Konfigurationsdateien geändert werden. Kein Build nötig. Die Website nutzt native ES-Module; direktes Öffnen per `file://` wird nicht unterstützt. Der lokale Server stellt nur statische Dateien bereit und lauscht auf dem eigenen Rechner.
+Dann **http://127.0.0.1:5173** öffnen. Kein Framework-Build und keine Installation für die eigentliche Website notwendig. `file://` funktioniert wegen nativer JS-Module nicht.
 
-## Selbst ausprobieren
+## Jetzt nutzbar
+- Feste LEGO-Sammlung mit Startseite, Gesamtwert und Figurenraster.
+- Minifiguren mit optionalem Foto, Namen, Katalog-ID und manuell geschätztem Wert erfassen.
+- Einträge öffnen, bearbeiten und nach Bestätigung löschen; doppelte Figuren sind getrennte Exemplare.
+- Daten und Bilder werden ausschließlich lokal im Browser (`localStorage`) gespeichert und bleiben bei Reload desselben Browser-Origin erhalten.
 
-1. Auf der Startseite **LEGO-Figuren** oder **Sammlung öffnen** wählen.
-2. **Gegenstand hinzufügen**: optional Bild, Name, LEGO-/Katalog-ID und Preis eingeben.
-3. **Speichern**, die Kachel in der Sammlung öffnen und den Eintrag ansehen/bearbeiten.
-4. **Löschen** entfernt nach Bestätigung genau dieses Exemplar.
+**Speichergrenzen:** kein Backup, kein Geräteabgleich. Browserdaten löschen oder die Webadresse/den Browser wechseln kann Bestände unzugänglich machen. Fotos bis 2 MB pro Datei; `localStorage` kann auch vorher voll werden. Keine wertvollen Bestände ohne unabhängige Sicherung als einziges Exemplar betrachten.
 
-Gleiche Namen/Katalognummern sind erlaubt. Leere Angaben zeigen neutrale Defaults; ein leerer Preis bleibt unbewertet, eine eingegebene 0 zählt als 0,00 €. Die feste LEGO-Sammlung ist sofort vorhanden.
+## Nächste zwei Ziele
+1. Foto → mögliche LEGO-Minifigur(en) erkennen → Nutzer bestätigt/korrigiert → Felder automatisch vorbelegen.
+2. Aktuelle Marktwert-Schätzung aus transparent benannter Quelle (verkaufte Preise bevorzugt, sonst Angebotsdaten klar kennzeichnen); immer manuell überschreibbar.
 
-**Daten und Bilder werden nur in diesem Browser gespeichert (`localStorage`) und bleiben beim Neuladen erhalten. Keine Cloud oder Sicherung.** Browserdaten löschen, Privatmodus oder anderer Browser/Host/Port können den Bestand verlieren/wechseln. Bilder unverändert bis 2 MB je Datei; der gesamte Browserspeicher kann schon früher voll sein. Das ist ein Erprobungsprototyp, kein abgeschlossenes M1.
+**Noch nicht vorhanden:** Bilderkennung, Preisabfrage oder entsprechende Anbieterintegration. Keine Auswahl eines Dienstes oder laufende Kosten beschlossen.
 
-## Entwicklung und Prüfung
-
+## Entwicklung
 ```sh
 npm ci
 npm run lint
 npm test
-# Einmalig, falls kein System-Chromium vorhanden:
-npx playwright install chromium
+# Browser-Tests nach Installation der Chromium-Testumgebung:
 npm run test:e2e
 ```
 
-`npm ci` installiert ausschließlich die Browser-Testwerkzeuge; die Website selbst hat keine Paketabhängigkeiten. `lint` prüft JS-Syntax und direkte Importgrenzen. Keine TypeScript-/Build-Prüfung, da kein Compiler oder Bundler eingesetzt wird.
+Website ohne React/Vite/TypeScript: `index.html`, `styles.css`, `src/app.js` und `src/{domain,application,infrastructure,presentation}/`.
 
-[Tatsächlicher Prüfstand](docs/planning/STATUS.md) · [Entwicklungsübergabe und Speichervertrag](docs/development/PROTOTYPE.md)
+Aktuelle Regeln: [AGENTS.md](AGENTS.md) · [Scope](docs/product/CURRENT_SCOPE.md) · [Status](docs/planning/STATUS.md) · [Entwicklungsdetails](docs/development/PROTOTYPE.md) · [Feature-Status](FEATURE_CHECKLIST.md).
 
-## Struktur im Repository
-
-- Root: `AGENTS.md`, `PROJECT_FLOW.md`, `CLASS_DIAGRAM.md`, `FEATURE_CHECKLIST.md`, `UI_PREVIEW.md`
-- `docs/product`: Produktkontext und aktueller Umfang
-- `docs/architecture`: Architektur, Datenverträge, Entscheidungen, Quellen, Zielstruktur
-- `docs/ui`: UI-Spezifikation
-- `docs/planning`: Aufgaben, Abnahmekriterien, Status
-- `docs/preview`: lokale Offline-Vorschau (`ui-preview.html`, `screens.svg`)
-- `prompts`: Startprompt für den nächsten Coding-Agenten
-- `Sammel-App-Startpaket.zip`: Original-Archivquelle (bewusst beibehalten)
-
-## Kontext für die nächste Entwicklung
-
-[AGENTS.md](AGENTS.md) → [CURRENT_SCOPE](docs/product/CURRENT_SCOPE.md) → [Nutzeranordnung](docs/product/PROTOTYPE_DIRECTIVE.md) → [technische Übergabe](docs/development/PROTOTYPE.md).
-
-[Funktionsübersicht](FEATURE_CHECKLIST.md), [Abläufe](PROJECT_FLOW.md), [Modell](CLASS_DIAGRAM.md) und [UI-Konzept](UI_PREVIEW.md) unterscheiden den tatsächlichen Stand vom späteren Zielbild. Das Original-ZIP und die HTML-/SVG-Designvorschau bleiben erhalten. Der alte Bootstrap-Prompt beschreibt einen früheren React-Auftrag und soll nicht unverändert erneut ausgeführt werden.
-
-Noch nicht enthalten: mehrere/konfigurierbare Sammlungen, eigener Attributeditor, Erkennung, Preisabfragen, Suche/Filter, Import/Export, Cloud, PWA und öffentliches Deployment. Zuerst den einfachen Prototyp beurteilen, danach den nächsten kleinen Umfang festlegen.
+**Historische Entwürfe:** `docs/architecture/`, `docs/ui/`, `docs/preview/`, `docs/product/SAMMEL_APP_PROJEKTKONTEXT.md`, `prompts/BOOTSTRAP_AGENT_PROMPT.md` und `Sammel-App-Startpaket.zip` stammen aus einer verworfenen breiteren Planung. Sie sind nicht Bestandteil des aktiven Arbeitsauftrags.
