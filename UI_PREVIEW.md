@@ -1,3 +1,5 @@
+> **Laufender Stand:** Die Website startet mit `npm start` und hat eine Übersicht, eine feste LEGO-Sammlung, Erfassung und Details. Die zwei Navigationsziele und vier manuellen Felder wurden [vom Projektinhaber angeordnet](docs/product/PROTOTYPE_DIRECTIVE.md). Farben und Bildraster orientieren sich am folgenden Entwurf; dessen zehn Ansichten und fiktive Zahlen sind weiterhin nur historische Designreferenz. Der tatsächliche Stand nutzt localStorage und eigene Eingaben.
+
 # So könnte die Sammel-App aussehen
 
 Entwurf · 23.10.2026 · Beispieldaten, kein bestätigtes Enddesign.

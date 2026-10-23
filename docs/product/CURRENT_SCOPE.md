@@ -1,3 +1,5 @@
+> **Aktueller Auftrag vom 23.10.2026:** Der Projektinhaber hat eine einfache Website mit **HTML, CSS und JavaScript**, fester LEGO-Sammlung, manueller Erfassung von Bild/Preis/Katalog-ID/Name und simpler lokaler Speicherung angeordnet. Diese Vorgabe ersetzt für den Prototyp die nachfolgende React-/Read-only-/Mehrsammlungsplanung. Verbindliche Abgrenzung: [PROTOTYPE_DIRECTIVE.md](PROTOTYPE_DIRECTIVE.md). Umsetzung/Prüfung: [STATUS.md](../planning/STATUS.md). Der ältere Kontext darunter bleibt als Planungshistorie erhalten.
+
 # Aktueller Auftrag und Umfang
 
 Stand: 23.10.2026. Ergänzt den unverändert übernommenen ursprünglichen Projektkontext.

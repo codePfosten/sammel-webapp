@@ -1,3 +1,5 @@
+> **Aktueller Stand:** Native HTML-/CSS-/JS-Website, kein React/TS/Vite. Auf ausdrückliche [Anordnung des Projektinhabers](../product/PROTOTYPE_DIRECTIVE.md) bleibt nur eine feste LEGO-Sammlung. Kleine Domain-/Application-/Infrastructure-/Presentation-Module plus `src/app.js` erhalten die Trennung. Speicherung vorerst als einzelner localStorage-Snapshot. [Tatsächliche Architektur und Erweiterungsgrenzen](../development/PROTOTYPE.md). Der folgende Entwurf ist langfristiger Kontext.
+
 # Architektur · modularer Browser-Monolith mit Ports und Adaptern
 
 Stand: 23.10.2026 · Konkrete Empfehlung für den Feldversuch, keine vorhandene Implementierung.

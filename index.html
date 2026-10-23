@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#1e5a49" />
+    <meta
+      name="description"
+      content="Ein einfacher lokaler Prototyp für deine LEGO-Figuren."
+    />
+    <title>Sammelraum · LEGO-Sammlung</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Zum Inhalt</a>
+    <header class="site-header">
+      <a class="brand" href="#/" aria-label="Sammelraum – Startseite"
+        ><span aria-hidden="true">▦</span> Sammelraum</a
+      >
+      <span class="badge">Website-Prototyp</span>
+    </header>
+    <div class="storage-note">
+      Lokal in diesem Browser gespeichert. Keine Cloud, keine automatische
+      Sicherung.
+    </div>
+    <main id="main" tabindex="-1">
+      <p role="status">Sammlung wird geladen …</p>
+    </main>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="#/" data-nav="home">Übersicht</a>
+      <a href="#/collection" data-nav="collection">LEGO-Sammlung</a>
+    </nav>
+    <noscript
+      >Bitte JavaScript aktivieren, um Gegenstände hinzuzufügen und zu
+      verwalten.</noscript
+    >
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

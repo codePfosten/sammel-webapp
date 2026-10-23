@@ -25,3 +25,8 @@ Anbieter für Erkennung/Preise; Hosting und privater iPhone-Zugang; endgültige 
 ## Änderungen
 
 Bei Änderung eine datierte Zeile ergänzen: Anlass, betroffene Entscheidung, neue Regel, betroffene Verträge und nötige Datenmigration. Eine Änderung am Entwurf ist kein Architekturfehler; undokumentierte Widersprüche sind zu vermeiden.
+
+
+## Angeordnete Vereinfachung · 23.10.2026
+
+Der Projektinhaber ersetzt A02/A05/A09 für den aktuellen Prototyp: HTML/CSS/JS ohne React/TS/Vite, einfache lokale Speicherung über localStorage, zwei Navigationsziele Übersicht/LEGO-Sammlung. Eine feste Sammlung ersetzt vorerst Sammlungserstellung/-konfiguration. A07 (Cent/null/0), individuelle Exemplar-IDs und grundsätzliche Schichtentrennung bleiben. Bilder unverändert als Data-URLs, maximal 2 MB pro Datei; keine Bildbearbeitung. Quelle: [PROTOTYPE_DIRECTIVE](../product/PROTOTYPE_DIRECTIVE.md). Kein vollständiger M1-Abschluss und kein Website-Deployment.

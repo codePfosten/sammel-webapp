@@ -1,56 +1,39 @@
-# Modellübersicht
+# Kleines Modell des Website-Prototyps
 
-Stand: 23.10.2026. **Alle Elemente geplant; keines bereits als App-Code implementiert.** Das UML zeigt fachliche Datentypen und Schnittstellen; daraus folgt keine Pflicht, Java-artige Klassen zu schreiben.
+Stand: 23.10.2026 · Implementiert als JavaScript-Objekte und Funktionen, keine Klassen erforderlich.
 
 ```mermaid
 classDiagram
-  direction TB
-  class Category {
-    <<geplant>>
-    id
-    name
-    kind
-  }
   class Collection {
-    <<geplant>>
-    id
-    name
-    categoryId
+    id = default-lego
+    name = LEGO-Figuren
   }
   class Collectible {
-    <<geplant>>
     id
     collectionId
     name
     catalogId
     marketValueMinor
     imageId
+    createdAt
   }
-  class CustomAttribute {
-    <<geplant>>
-    id
-    key
-    value
+  class Snapshot {
+    version = 1
+    items
+    images
   }
-  class ImageAsset {
-    <<geplant>>
-    id
-    blob
-  }
-  Category "1" <-- "0..*" Collection : Kategorie
-  Collection "1" <-- "0..*" Collectible : Sammlung
-  Collectible "1" *-- "0..*" CustomAttribute : eigene Angaben
-  Collectible "1" --> "0..1" ImageAsset : Bild
+  Collection "1" <-- "0..*" Collectible
+  Snapshot "1" *-- "0..*" Collectible
 ```
 
-Zwei identische Figuren sind zwei Collectible-Einträge mit verschiedenen IDs. Name und Katalognummer dürfen gleich sein. Der Wert gehört zum einzelnen Exemplar. Die Kategorie wird über die Sammlung bestimmt.
+Die Sammlung ist fest vorgegeben. Jedes physische Exemplar erhält eine eigene ID. Bilder werden im Snapshot separat unter ihrer Exemplar-ID gespeichert, fehlende Bilder ergeben Platzhalter. Das kleinere Modell wurde [vom Projektinhaber angeordnet](docs/product/PROTOTYPE_DIRECTIVE.md).
 
-| Technischer Baustein | Status | Aufgabe |
-|---|---|---|
-| InventoryReader | geplant | Bestände asynchron lesen |
-| MemoryInventoryReader | geplant | Demo-Daten liefern |
-| InventoryWriter | geplant | atomare Schreibvorgänge |
-| ImageReader | geplant | Bild zur Bild-ID liefern |
-| IndexedDB-Adapter | später M1 | dauerhaft lokal speichern |
+| Baustein | Tatsächlicher Code |
+|---|---|
+| Modelle und Regeln | `src/domain/inventory.js` |
+| Anwendungsfälle | `src/application/inventory.js` |
+| Lokaler Speicheradapter | `src/infrastructure/local-storage.js` |
+| HTML-Ansichten | `src/presentation/views.js` |
+| Routing und Verdrahtung | `src/app.js` |
 
-Bei Umsetzung Status je Element auf „in Arbeit“, „implementiert, ungeprüft“ oder „geprüft“ ändern und tatsächliche Codepfade ergänzen. Die [Datenverträge](docs/architecture/DATA_CONTRACTS.md) sind technisch maßgeblich.
+Spätere Kategorie-/Attribut-/IndexedDB-Modelle stehen als Entwurf in docs/architecture. [Aktiver Vertrag](docs/development/PROTOTYPE.md).

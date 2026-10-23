@@ -1,3 +1,5 @@
+> **Aktuelle Abnahme:** Der reduzierte Website-Prototyp folgt [PROTOTYPE_DIRECTIVE](../product/PROTOTYPE_DIRECTIVE.md). Maßgeblich sind Startseite → LEGO-Sammlung → Objekt manuell hinzufügen → Detail → Bearbeiten/Löschen, lokale Reload-Erhaltung, Defaults und verständliche Speicherfehler. Die folgenden M0-/M1-Kriterien sind der größere ursprüngliche Plan; ein vollständiges M1 wird nicht behauptet. [Prüfergebnisse](STATUS.md).
+
 # Abnahme und sinnvolle Prüfungen
 
 ## M0 – Bootstrap fertig, App noch nicht produktiv

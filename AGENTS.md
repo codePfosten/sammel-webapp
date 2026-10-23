@@ -27,3 +27,8 @@ Lies für UI-Aufgaben zusätzlich UI_SPEC; für Datenaufgaben DATA_CONTRACTS; f�
 Jede Übergabe nennt: geänderte Dateien, tatsächliches Verhalten, ausgeführte Prüfungen mit Ergebnis, Einschränkungen und nächsten sinnvollen Task. Aktualisiere STATUS und betroffene Übersichten. Markiere Features nur nach Umsetzung und passender Prüfung als fertig. Nicht ausführbare Prüfungen heißen „nicht ausgeführt“, nicht „bestanden“.
 
 Die Dateien CLASS_DIAGRAM, PROJECT_FLOW, UI_PREVIEW und FEATURE_CHECKLIST sind für den Menschen; verbindliche technische Details liegen in docs/architecture und docs/ui. Falls später VISUAL_OVERVIEW_AGENT.md bereitgestellt wird, beachte deren zusätzliche Anweisung. Erfinde ihren Inhalt nicht.
+
+
+## Aktueller angeordneter Website-Prototyp
+
+Der Projektinhaber hat am 23.10.2026 ausdrücklich eine Vereinfachung auf HTML, CSS und JavaScript beauftragt: [PROTOTYPE_DIRECTIVE](docs/product/PROTOTYPE_DIRECTIVE.md). Aktive technische Übergabe: [PROTOTYPE.md](docs/development/PROTOTYPE.md). Presentation verwendet jetzt native DOM-/HTML-Ansichten statt React; die übrigen Schichtengrenzen bleiben sinnvoll bestehen. Kein React-/TS-/Vite-Gerüst, keine sechs Tabs und keine Sammlungs-/Attributkonfiguration ohne neuen Auftrag einführen. Die älteren Zielentwürfe bleiben Dokumentationshistorie. Repository-Commits sind autorisiert; ein öffentliches Website-Deployment ist nicht beauftragt.

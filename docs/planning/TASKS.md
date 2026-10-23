@@ -1,3 +1,5 @@
+> **Neuester Auftrag:** Der Projektinhaber hat den Umfang auf einen klassischen HTML-/CSS-/JS-Website-Prototyp vereinfacht. Der frühere Bootstrap-/M1-Plan unten ist historischer Backlog, kein aktueller Arbeitsauftrag. Implementiert sind feste LEGO-Sammlung, Übersicht und manuelle Objektverwaltung mit localStorage. Nächster Schritt ist die Rückmeldung zum Prototyp; anschließend eine einzelne konkrete Erweiterung beauftragen. [Anordnung](../product/PROTOTYPE_DIRECTIVE.md) · [Status](STATUS.md).
+
 # Aufgabenfolge
 
 Kein Kalenderplan. Jede Zeile ist ein eigenständig übergebbarer Auftrag. Zuerst M0 vollständig abschließen; weitere Tasks erst als eigener Umfang.

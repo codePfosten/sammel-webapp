@@ -1,3 +1,5 @@
+> **Aktuelle Dateizuständigkeiten:** [PROTOTYPE.md](../development/PROTOTYPE.md). Der untenstehende React-/TypeScript-Zielplan gilt derzeit nicht. Es existiert ein einzelner nativer HTML-/CSS-/JS-Prototyp im Root, mit fünf kleinen JS-Modulen unter `src/`. Kein zweites Frontend-Projekt anlegen.
+
 # Zielstruktur und Dateizuständigkeiten
 
 Das vorliegende Paket enthält bereits die Dokumentation. Die nachfolgenden `src`-, Test- und Tooldateien sind ein **Zielplan für den Bootstrap-Agenten**, noch keine existierenden App-Dateien. Ein einziges npm-Projekt in der Repository-Wurzel.

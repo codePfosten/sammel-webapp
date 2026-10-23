@@ -1,3 +1,5 @@
+> **Aktuell umgesetzter Umfang:** Auf [ausdrückliche Nutzeranordnung](../product/PROTOTYPE_DIRECTIVE.md) nur Übersicht, feste LEGO-Sammlung, Objektformular und Details, mit zwei dauerhaft sichtbaren Navigationszielen. Hash-Routen: `#/`, `#/collection`, `#/items/new`, `#/items/:id`, `#/items/:id/edit`. Manuell Bild, Name, LEGO-/Katalog-ID und Preis; kein Attributeditor/keine Einstellungen. Der folgende umfassende Sechs-Tab-Entwurf ist zurückgestellt. [Aktueller Implementierungsvertrag](../development/PROTOTYPE.md).
+
 # UI-Konzept und Navigationsvertrag
 
 Entwurf, nicht bestätigtes Enddesign. Ziel: ruhig, bildorientiert, auf dem iPhone gut lesbar. Die [HTML-Vorschau](../preview/ui-preview.html) ist ein Designartefakt, keine fertige Anwendung.

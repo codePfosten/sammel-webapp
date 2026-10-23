@@ -1,3 +1,5 @@
+> **Aktueller Prototyp:** Modellfelder und null/0-Regeln bleiben soweit genutzt erhalten. Eine feste Sammlung, keine Kategorie-/Attributkonfiguration. Native JS-Module statt TypeScript; async `read()/write(snapshot)` statt der vollständigen bisherigen Ports. Bilder in einem separaten Snapshot-Feld als Data-URLs, nicht als Blob-Store. Dies wurde zur Vereinfachung [vom Projektinhaber angeordnet](../product/PROTOTYPE_DIRECTIVE.md). [Aktiver Datenvertrag](../development/PROTOTYPE.md). Der folgende Entwurf beschreibt spätere Möglichkeiten.
+
 # Datenmodell und Schnittstellen · Entwurf v0.1
 
 Alle folgenden Festlegungen sind konkrete Arbeitsannahmen für die Architektur, soweit sie nicht bereits im Produktkontext beschlossen sind. M0 erzeugt daraus Typen und Read-only-Verträge; M1 implementiert Regeln und Schreiben.

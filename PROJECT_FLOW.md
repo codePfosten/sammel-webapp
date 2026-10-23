@@ -1,31 +1,20 @@
-# So bewegt man sich durch die App
+# So funktioniert die Website jetzt
 
-Entwurf · Stand 23.10.2026 · noch keine implementierten Abläufe.
+Stand: 23.10.2026 · Einfacher, manuell bedienbarer Prototyp.
 
 ```mermaid
 flowchart TD
-  Start["Dashboard"] --> Collections["Sammlungen"]
-  Start --> Collection["Einzelne Sammlung"]
-  Collections --> Collection
-  Collections --> NewCollection["Sammlung anlegen"]
-  Collection --> Detail["Objektdetail"]
-  Collection --> Add["Objekt hinzufügen"]
-  All["Alle Objekte"] --> Detail
-  Detail --> Edit["Bearbeiten"]
-  Edit --> Detail
-  Add --> Detail
+  Start[Übersicht] --> Collection[LEGO-Sammlung]
+  Start --> Add[Gegenstand hinzufügen]
+  Collection --> Add
+  Add -->|lokal speichern| Detail[Detailansicht]
+  Collection -->|Kachel öffnen| Detail
+  Detail --> Edit[Bearbeiten]
+  Edit -->|lokal speichern| Detail
+  Detail -->|Löschen bestätigen| Collection
+  Collection --> Start
 ```
 
-Die untere Navigation bleibt sichtbar. Sammlung vom Dashboard öffnen aktiviert „Sammlungen“. Ein Objekt aus „Alle“ behält dagegen „Alle“ aktiv. Bearbeiten und Hinzufügen sind im ersten Gerüst nur vorbereitete Formulare; erst M1 speichert tatsächlich.
+Alle Ansichten lesen denselben lokalen Bestand neu. Ein Neuladen erhält die gespeicherten Gegenstände und Bilder. Abbrechen verwirft den Entwurf. Gleiche Figuren bleiben getrennte Exemplare. Die feste Navigation führt jederzeit zu Übersicht oder Sammlung.
 
-## Wie das Projekt wächst
-
-| Schritt | Sichtbares Ergebnis |
-|---|---|
-| Jetzt: Planung | dieses Paket und die Designvorschau |
-| M0: Gerüst | lokal laufende, navigierbare Demo |
-| M1: manuelle App | eigene Sammlungen, Exemplare, Bilder und dauerhafte Daten |
-| Erweiterungen | einzeln beauftragte PWA-/Backup-/Such-/Analysefunktionen |
-| Zuletzt | News und Marktbeobachtung |
-
-[Aufgabenfolge](docs/planning/TASKS.md) · [Funktionsstand](FEATURE_CHECKLIST.md) · [UI-Vorschau](UI_PREVIEW.md).
+Der Projektinhaber hat die frühere größere Planung bewusst auf diese Website reduziert. Zuerst den gewünschten Produktumfang anhand dieses Prototyps beurteilen. Weitere Sammlungen, Attribute, Datenbank und APIs sind jeweils neue Aufgaben. [Anordnung](docs/product/PROTOTYPE_DIRECTIVE.md) · [Status](docs/planning/STATUS.md).
