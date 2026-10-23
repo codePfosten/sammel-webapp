@@ -1,0 +1,17 @@
+HINWEIS FÜR ALLE PROJEKT-AGENTEN – VISUELLE PROJEKTÜBERSICHT
+
+Dieses Repository enthält zusätzlich zur technischen Dokumentation eine visuelle Projektübersicht für den Projektinhaber. Sie dient ausschließlich dazu, den geplanten und tatsächlichen Projektstand schnell und verständlich zu erkennen – insbesondere auf dem Smartphone. Sie ist NICHT die maßgebliche Spezifikation für Implementierung, Architektur oder Agentenkontext.
+
+Bitte berücksichtige bei Planung, Architekturentwürfen und beim Anlegen einer neuen Projektstruktur folgende Dateien:
+
+- README.md: leicht verständlicher Einstieg und Verweise auf die Übersichten (bestehende README-Inhalte nicht blind überschreiben).
+- CLASS_DIAGRAM.md: UML-Klassendiagramm mit Kennzeichnung geplanter, in Arbeit befindlicher und fertiggestellter Klassen.
+- PROJECT_FLOW.md: anschaulicher Ablauf des Projekts bzw. der Anwendung, vorzugsweise als Mermaid-Diagramm.
+- UI_PREVIEW.md: visuelle Vorstellung des möglichen späteren User Interfaces, mit Mockups, Skizzen oder Bildverweisen.
+- FEATURE_CHECKLIST.md: verständliche Checkliste der gewünschten Funktionen und ihres Umsetzungsstands.
+
+Falls diese Dateien noch fehlen, lege bei der Erstellung eines Projektgerüsts passende, klar als Entwurf gekennzeichnete Platzhalter an. Erfinde keine bereits implementierten Klassen, fertigen Features oder bestätigten Designentscheidungen. Verlinke die Dateien sinnvoll miteinander.
+
+Bei wesentlichen Änderungen an Architektur, Funktionsumfang, UI oder Implementierungsstatus sollen die Übersichten mit aktualisiert werden. Nutze hierfür nach Möglichkeit den zuständigen Visual-Overview-Agenten und dessen Anweisung VISUAL_OVERVIEW_AGENT.md. Falls er nicht verfügbar ist, halte zumindest die betroffenen Übersichten selbst konsistent oder vermerke ausdrücklich, dass eine Aktualisierung aussteht.
+
+WICHTIG: Priorisiere für diese Dateien Anschaulichkeit, Übersichtlichkeit und Verständlichkeit für den Menschen statt technische Vollständigkeit. Technische Details und verbindliche Spezifikationen gehören weiterhin in die eigentliche Projekt- und Entwicklungsdokumentation. Eine UI-Vorschau ist ein Konzept und keine Zusage über den endgültigen Look.
