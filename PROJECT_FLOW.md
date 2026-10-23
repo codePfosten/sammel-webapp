@@ -8,7 +8,7 @@ flowchart TD
   B --> D[Figur manuell hinzufügen]
   C --> E[Bearbeiten]
   C --> F[Löschen nach Bestätigung]
-  D --> B
+  D --> C
   E --> C
 ```
 
