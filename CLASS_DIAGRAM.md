@@ -1,39 +1,32 @@
-# Kleines Modell des Website-Prototyps
+# Schlankes Datenmodell — LEGO-Website
 
-Stand: 23.10.2026 · Implementiert als JavaScript-Objekte und Funktionen, keine Klassen erforderlich.
+Das folgende Diagramm vereinfacht **die tatsächlich im Prototyp genutzten Datensätze**, keine Pflicht zu Klassen in JavaScript:
 
 ```mermaid
 classDiagram
-  class Collection {
-    id = default-lego
-    name = LEGO-Figuren
+  class LegoCollection {
+    id = "default-lego"
+    name = "LEGO-Figuren"
   }
-  class Collectible {
+  class LegoFigureEntry {
     id
     collectionId
     name
     catalogId
     marketValueMinor
+    currency = "EUR"
     imageId
     createdAt
   }
-  class Snapshot {
+  class LocalSnapshot {
     version = 1
     items
     images
   }
-  Collection "1" <-- "0..*" Collectible
-  Snapshot "1" *-- "0..*" Collectible
+  LegoCollection "1" --> "0..*" LegoFigureEntry
+  LocalSnapshot "1" --> "0..*" LegoFigureEntry
 ```
 
-Die Sammlung ist fest vorgegeben. Jedes physische Exemplar erhält eine eigene ID. Bilder werden im Snapshot separat unter ihrer Exemplar-ID gespeichert, fehlende Bilder ergeben Platzhalter. Das kleinere Modell wurde [vom Projektinhaber angeordnet](docs/product/PROTOTYPE_DIRECTIVE.md).
+Die Sammlung ist fest; **jede physische Figur ist ein eigener Eintrag**. Ein lokales Bild kann über `imageId` einem Datensatz zugeordnet sein. Der bisherige Datensatz enthält aus Kompatibilitätsgründen ein leeres `attributes`-Array; **kein** Attributeditor ist geplant.
 
-| Baustein | Tatsächlicher Code |
-|---|---|
-| Modelle und Regeln | `src/domain/inventory.js` |
-| Anwendungsfälle | `src/application/inventory.js` |
-| Lokaler Speicheradapter | `src/infrastructure/local-storage.js` |
-| HTML-Ansichten | `src/presentation/views.js` |
-| Routing und Verdrahtung | `src/app.js` |
-
-Spätere Kategorie-/Attribut-/IndexedDB-Modelle stehen als Entwurf in docs/architecture. [Aktiver Vertrag](docs/development/PROTOTYPE.md).
+Die künftige Bilderkennung und Preisquelle sind **noch keine implementierten Klassen oder Schnittstellen**. Erst bei Integration konkrete schlanke Verträge hinzufügen. Detail: [PROTOTYPE.md](docs/development/PROTOTYPE.md).

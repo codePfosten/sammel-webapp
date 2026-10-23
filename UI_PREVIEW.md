@@ -1,26 +1,11 @@
-> **Laufender Stand:** Die Website startet mit `npm start` und hat eine Übersicht, eine feste LEGO-Sammlung, Erfassung und Details. Die zwei Navigationsziele und vier manuellen Felder wurden [vom Projektinhaber angeordnet](docs/product/PROTOTYPE_DIRECTIVE.md). Farben und Bildraster orientieren sich am folgenden Entwurf; dessen zehn Ansichten und fiktive Zahlen sind weiterhin nur historische Designreferenz. Der tatsächliche Stand nutzt localStorage und eigene Eingaben.
+# UI-Orientierung — aktuelle LEGO-Website
 
-# So könnte die Sammel-App aussehen
+**Maßgeblich ist die bereits implementierte Website**, gestartet über `npm start`, nicht die früher erzeugte HTML-Designgalerie.
 
-Entwurf · 23.10.2026 · Beispieldaten, kein bestätigtes Enddesign.
+Aktuelle Ansichten: Startseite mit Gesamtwert, eine feste LEGO-Sammlung mit Figurenraster, Figurendetail, Formular zum Hinzufügen/Bearbeiten. Die zwei vorhandenen Hauptnavigationsziele reichen für diesen Umfang.
 
-[**Visuelle Vorschau öffnen**](docs/preview/ui-preview.html) – eigenständige HTML-Datei, lokal und ohne Installation. Die Ansichten lassen sich über die Auswahlleiste vergleichen. Es wird nichts gespeichert oder aus dem Internet geladen.
+Spätere gewünschte UI-Ergänzung: Im vorhandenen Formular Foto wählen, Erkennungsvorschläge ansehen, **Figur bestätigen oder korrigieren**, passende Felder befüllen und einen aktuellen Preisvorschlag samt Quelle kontrollieren. Alle Daten bleiben manuell änderbar.
 
-![Vier zentrale Bildschirmideen](docs/preview/screens.svg)
+`docs/preview/ui-preview.html` und `screens.svg` enthalten **veraltete, deutlich umfangreichere Konzepte** (Mehrsammlungen, sechs Tabs usw.) und dürfen nicht ungefragt nachgebaut werden.
 
-Ruhige helle Karten, ein deutlich hervorgehobener Gesamtwert und große Bilder. Die Vorschau umfasst Dashboard, Sammlungen, Sammlung, Alle, Detail, Objektformular, Sammlungsformular, Einstellungen sowie die späteren Tabs Analyse und News.
-
-| Ansicht | Was man sofort erkennt |
-|---|---|
-| Dashboard | Gesamtwert und schneller Zugang zu den Sammlungen |
-| Sammlungen | Bestände und Zugang zum Anlegen |
-| Einzelne Sammlung | eigener Wert, Anzahl und Bildraster |
-| Alle | alle Exemplare unabhängig von ihrer Sammlung |
-| Detail | Foto, Angaben, eigene Attribute und Bearbeiten |
-| Formular | optionale Angaben, Foto und zusätzliche String-Paare |
-| Einstellungen | Speicherhinweise und später Sicherung |
-| Analyse / News | ausdrücklich noch nicht verfügbare Bereiche |
-
-Die Bildformen sind künstliche Platzhalter, keine echten Katalogfotos. In der Demo enthalten „LEGO Figuren“ drei Exemplare mit 18 €, 0 € und ohne Bewertung; „Karten“ eines mit 12 €. Daraus entstehen 30 € Gesamtwert und 3 von 4 bewertete Exemplare. Zwei LEGO-Exemplare dürfen gleich aussehen und dieselbe Katalog-ID haben.
-
-Die eigentliche App soll mobil zwei Bildspalten und dauerhaft sechs Navigationseinträge zeigen. Die genaue Gestaltung, Textlängen, Tastatur und Safe-Area müssen im späteren React-Prototyp geprüft werden. Technische Details stehen in [UI_SPEC.md](docs/ui/UI_SPEC.md).
+[Scope](docs/product/CURRENT_SCOPE.md) · [Feature-Status](FEATURE_CHECKLIST.md).
